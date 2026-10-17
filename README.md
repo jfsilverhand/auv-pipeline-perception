@@ -1,6 +1,8 @@
 # Underwater pipeline perception for an AUV
 
-Camera-based pipeline detection and segmentation for an autonomous underwater vehicle, deployed on a Jetson Orin Nano with TensorRT FP16. This is the result and analysis repository of my B.Sc. thesis (Kocaeli University, Computer Engineering, 2026), built for the AURA team vehicle.
+Camera-based pipeline detection and segmentation for an autonomous underwater vehicle, deployed on a Jetson Orin Nano with TensorRT FP16. This is the result and analysis repository of my B.Sc. thesis, built for the AURA team vehicle.
+
+**Technical report:** [`docs/technical_report.md`](docs/technical_report.md) (methods, analyses, threats to validity).
 
 It contains the logged outputs of the training and evaluation runs, plus code that regenerates every figure and number in this README from those files. It does **not** contain the dataset, the trained weights or the original training scripts (see [What is not here](#what-is-not-here)).
 
@@ -88,7 +90,7 @@ results/        logged outputs of the original runs (CSV / JSON / YAML)
 analysis/       scripts that turn results/ into figures and numbers
 figures/        generated figures; ultralytics_yolov8s/ holds the original Ultralytics plots of the run
 tools/          split_leakage_check.py (needs the private dataset)
-docs/           PROVENANCE.md: which number comes from which file
+docs/           technical_report.md; PROVENANCE.md: which number comes from which file
 ```
 
 Column names in some CSVs are Turkish; [`results/README.md`](results/README.md) translates them.
@@ -101,4 +103,4 @@ Column names in some CSVs are Turkish; [`results/README.md`](results/README.md) 
 
 ## Thesis
 
-N. E. Güven, *İnsansız Su Altı Araçlarında Derin Öğrenme Tabanlı Otonom Boru Hattı Takibi Sistemi* (Deep-learning-based autonomous pipeline tracking for unmanned underwater vehicles), B.Sc. thesis, Kocaeli University, 2026. In Turkish; available on request.
+*Deep-learning-based autonomous pipeline tracking for unmanned underwater vehicles*, B.Sc. thesis. Available on request.
