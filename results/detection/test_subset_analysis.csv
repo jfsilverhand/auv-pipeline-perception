@@ -1,0 +1,5 @@
+kaynak,map50,test_n,train_n,borulu_%,ort_alan_px2,alan_orani_%,nbbox_img,enboy,kucuk_%,orta_%,buyuk_%,gt_stili
+new_linetracking,0.9575,136,2515,68.4,59232.0,14.46,1.13,1.8,0.0,1.9,98.1,polygon
+aura_testvideo,0.8564,153,2810,26.1,53487.0,13.06,1.35,2.5,13.0,14.8,72.2,borusuz
+sekil2,0.8332,95,724,53.7,184537.0,8.9,1.57,2.5,0.0,22.5,77.5,bbox
+deniz_boru,0.7944,177,1188,85.3,84928.0,12.29,1.28,2.6,1.0,18.0,80.9,bbox

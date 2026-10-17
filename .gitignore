@@ -1,0 +1,23 @@
+# Data and weights are not part of this repository
+data/
+datasets/
+*.pt
+*.pth
+*.onnx
+*.engine
+*.trt
+*.zip
+*.mp4
+*.avi
+runs/
+
+# Secrets
+.env
+.env.*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/

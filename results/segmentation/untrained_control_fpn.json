@@ -1,0 +1,9 @@
+{
+  "fpn_baseline_imagenet": {
+    "type": "baseline_imagenet_pretrained",
+    "training": "NONE (ImageNet encoder only, decoder head random)",
+    "mIoU": 0.036251571465048656,
+    "Dice": 0.06864700612410628,
+    "n_samples": 205
+  }
+}

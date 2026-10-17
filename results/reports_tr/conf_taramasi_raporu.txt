@@ -1,0 +1,23 @@
+YOLOv8 CONFIDENCE EŞİK TARAMASI RAPORU
+============================================================
+ Conf    Prec  Recall      F1    TP    FP    FN
+ 0.25  0.7140  0.8822  0.7893   382   153    51
+ 0.30  0.7520  0.8684  0.8060   376   124    57
+ 0.35  0.7811  0.8568  0.8172   371   104    62
+ 0.40  0.8112  0.8337  0.8223   361    84    72 *
+ 0.45  0.8318  0.8106  0.8211   351    71    82
+ 0.50  0.8535  0.7806  0.8154   338    58    95
+ 0.55  0.8602  0.7529  0.8030   326    53   107
+ 0.60  0.8626  0.7252  0.7880   314    50   119
+ 0.65  0.8727  0.6651  0.7549   288    42   145
+ 0.70  0.8897  0.5958  0.7137   258    32   175
+
+EN İYİ F1: 0.8223 @ conf=0.4 (P=0.8112, R=0.8337)
+
+KARAR:
+  - Maksimum F1 eşiği: 0.4 → dengeli P/R, genel kullanım
+  - Tracking için: Kalman filtresi kaçan tespiti tahminle telafi
+    ettiğinden, PRECISION öncelikli (yüksek conf) tercih edilir;
+    böylece hayalet kutular Kalman'ı saptırmaz. conf=0.50-0.60
+    bandı tracking'de tipik olarak en kararlısıdır.
+  - Düşük conf (0.25): recall yüksek ama FP fazla → Kalman gürültü

@@ -1,0 +1,26 @@
+TEZ ANA KARŞILAŞTIRMA — YOLOv8s vs DeepLabV3 vs FPN
+==========================================================================
+Ortak test: pipe/master/test (256 görüntü; YOLO bbox maskeden türetildi)
+
+Model      Mimari        Param(M)     MB   mAP50    mIoU    Dice  FPS-PC  FPS-Jet*
+YOLOv8s    Detection         11.1     22  0.6758       -       -      55        25
+DeepLabV3  Segmentation      26.0    104       -  0.7729  0.8556      26        12
+FPN        Segmentation      23.2     93       -  0.7815  0.8564      59        27
+  * Jetson tahmini = PC FPS × 0.45 (kaba; TRT FP16 gerçek değeri jetson_paket koşusundan gelecek)
+
+ÇIKARIMLAR:
+  - En yüksek doğruluk : FPN (mIoU 0.7815)
+  - En hızlı           : YOLOv8s (55 FPS)
+  - En küçük model     : YOLOv8s (22 MB)
+  - En dengeli         : FPN (59 FPS + mIoU 0.7815)
+  - Centerline için    : FPN/DeepLabV3 (piksel-hassas maske)
+  - Hız öncelikli      : YOLOv8s (bbox yeterliyse)
+
+TEZ İÇİN ANA CÜMLELER:
+  - Detection (YOLOv8s) ve segmentation (FPN/DeepLabV3) yaklaşımları,
+    düzeltilmiş ortak test setinde objektif karşılaştırıldı.
+  - FPN, segmentasyonda hem en yüksek doğruluğu (mIoU 0.7815) hem detection-dışı modeller arasında en yüksek
+    hızı (59 FPS) sağlayarak en iyi hız-doğruluk dengesini sunar.
+  - Boru merkez hattı (centerline) çıkarımı piksel-bazlı maske gerektirdiğinden,
+    otonom kontrol için segmentasyon (FPN) tercih edilir; YOLOv8s ham hız avantajıyla
+    alternatif/ön-eleme katmanı olarak konumlanır.

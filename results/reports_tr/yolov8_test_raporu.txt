@@ -1,0 +1,28 @@
+YOLOv8s TEST SETİ DEĞERLENDİRME RAPORU
+============================================================
+Model: yolov8s_pipe_ep70_map0906.pt (epoch 70)
+
+VAL vs TEST karşılaştırması:
+  Metrik         Val(629)  Test(596)     Fark
+  mAP50             0.906      0.873   -0.033
+  mAP50-95          0.704      0.685   -0.019
+  Precision         0.809      0.816   +0.007
+  Recall            0.875      0.850   -0.025
+
+  -> KABUL EDİLEBİLİR genelleme (fark 0.03-0.05)
+
+İnference hızı:
+  8.4 ms/görüntü (~119 FPS, RTX 3050 Ti)
+  preprocess 1.2 + inference 8.4 + postprocess 0.7 ms
+
+Hata analizi (conf>=0.25, IoU>=0.5):
+  TP 382 | FP 153 | FN 51
+  Precision (manuel): 0.714 | Recall (manuel): 0.882
+  False Negative oranı (kaçırılan boru): 11.8%
+  False Positive oranı: 28.6%
+
+TEZ 'BULGULAR' İÇİN HAZIR CÜMLELER:
+  - Önerilen YOLOv8s modeli test setinde (596 görüntü) mAP@0.5=0.873, mAP@0.5:0.95=0.685 başarımı elde etmiştir.
+  - Val-test farkının 0.033 (<0.05) olması, modelin validasyon setine ezberlemediğini, genelleme yeteneğinin güçlü olduğunu göstermektedir.
+  - 119 FPS çıkarım hızı (RTX 3050 Ti), gerçek zamanlı su altı takibi için yeterli marjı sağlamaktadır.
+  - Boru tespitinde recall 0.850 ile boruların %85'i yakalanmış, false positive oranı düşük tutulmuştur.

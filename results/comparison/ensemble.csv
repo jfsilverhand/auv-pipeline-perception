@@ -1,0 +1,4 @@
+yontem,map50,precision,recall,fps
+YOLO tek,0.6758,0.7727,0.6516,44.0
+Ensemble A (max-conf),0.736,0.6614,0.7352,18.0
+Ensemble B (fallback),0.6892,0.7615,0.6899,18.0

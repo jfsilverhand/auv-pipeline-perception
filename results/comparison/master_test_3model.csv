@@ -1,0 +1,4 @@
+model,mimari,params_M,boyut_MB,map50,miou,dice,fps_pc,fps_jetson_tahmin
+YOLOv8s,Detection,11.1,22.5,0.6758,,,55.0,25.0
+DeepLabV3,Segmentation,26.0,104.2,,0.7729,0.8556,26.0,12.0
+FPN,Segmentation,23.2,92.8,,0.7815,0.8564,59.0,27.0

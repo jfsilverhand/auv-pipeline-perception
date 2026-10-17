@@ -1,0 +1,14 @@
+YOLOv11s TEST SETİ DEĞERLENDİRME RAPORU
+============================================================
+Model: yolov11s_pipe_final.pt (eğitim en iyi epoch 72)
+
+Eğitim VAL vs TEST:
+  Metrik              Val       Test     Fark
+  mAP50            0.9182     0.8701  -0.0481
+  mAP50-95         0.6999     0.6900  -0.0099
+  Precision        0.8703     0.8593
+  Recall           0.8388     0.8037
+
+İnference: 8.6 ms/görüntü (~116 FPS, RTX 3050 Ti)
+
+TEZ İÇİN: YOLOv11s test setinde mAP@0.5=0.8701, mAP@0.5:0.95=0.6900 elde etmiştir (val-test farkı -0.0481).

@@ -1,0 +1,16 @@
+ENSEMBLE (YOLO + FPN) RAPORU — master/test, 256 (borulu)
+==================================================================
+Yöntem                     mAP50       P       R    FPS
+YOLO tek                  0.6758  0.7727  0.6516     44
+Ensemble A (max-conf)     0.7360  0.6614  0.7352     18
+Ensemble B (fallback)     0.6892  0.7615  0.6899     18
+
+En iyi mAP50: Ensemble A (max-conf) (0.736, baseline++0.0602)
+Recall kazancı (A): +0.0836 → FPN, YOLO'nun kaçırdığı boruları ekliyor
+
+SEBEP: FPN tam-kare, bulanık/uzak karelerde YOLO'nun bulamadığı
+boruyu yakalar; max-conf union recall'ı artırır ama FPN-kutu
+güveni (maske olasılığı) farklı ölçek olduğundan precision'da
+miktarına göre oynama olabilir.
+CAVEAT: YOLO conf (detection) ve FPN conf (maske olasılığı) farklı
+anlamda; mutlak mAP karşılaştırması bu karışımı içerir.

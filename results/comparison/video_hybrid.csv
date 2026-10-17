@@ -1,0 +1,4 @@
+mod,kare,tespit,tespit_orani,fps,ms_kare,hata_std_x,hata_std_y
+YOLO,6550,5130,0.783,63.9,15.7,251.7,157.4
+FPN,6550,5733,0.875,18.2,54.9,289.0,153.5
+Hibrit,6550,5130,0.783,22.5,44.4,262.6,169.1
